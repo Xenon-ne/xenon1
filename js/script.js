@@ -11,4 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const gallery = document.querySelector('.gallery');
+    gallery.addEventListener('scroll', () => {
+        const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
+        if (gallery.scrollLeft === 0) {
+            gallery.scrollLeft = maxScrollLeft - 1;
+        } else if (gallery.scrollLeft === maxScrollLeft) {
+            gallery.scrollLeft = 1;
+        }
+    });
 });
