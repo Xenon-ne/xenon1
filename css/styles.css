@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('images/background.jpg') no-repeat center center fixed; /* Adjust the path to your background image */
+    background: url('/Images/24.jpg') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -13,8 +13,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 50%;
+    width: 90%;
+    height: 80%;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -30,13 +30,13 @@ body {
     gap: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     padding: 20px;
 }
 
 .gallery::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in WebKit browsers */
+    display: none;
 }
 
 .gallery-item {
@@ -46,13 +46,15 @@ body {
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    backdrop-filter: blur(5px);
     flex-shrink: 0;
+    filter: blur(1px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .gallery-item:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    filter: blur(0);
 }
 
 .fullscreen {
@@ -63,30 +65,14 @@ body {
     height: 80vh;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: bounceIn 0.5s ease;
 }
 
 .fullscreen img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    border-radius: 10px;
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.3) translate(-50%, -50%);
-    }
-    50% {
-        transform: scale(1.1) translate(-50%, -50%);
-    }
-    100% {
-        transform: scale(1) translate(-50%, -50%);
-    }
 }
