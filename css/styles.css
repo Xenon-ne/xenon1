@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('/Images/24.jpg') no-repeat center center fixed;
+    background: url('Images/29.jpg') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -33,6 +33,7 @@ body {
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     padding: 20px;
+    transition: scroll 0.3s ease;
 }
 
 .gallery::-webkit-scrollbar {
@@ -53,7 +54,7 @@ body {
 
 .gallery-item:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     filter: blur(0);
 }
 
@@ -61,11 +62,12 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 80vw;
-    height: 80vh;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,4 +77,40 @@ body {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.arrow.left {
+    left: 20px;
+}
+
+.arrow.right {
+    right: 20px;
+}
+
+.arrow svg {
+    width: 15px;
+    height: 15px;
 }
