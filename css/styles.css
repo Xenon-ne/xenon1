@@ -48,7 +48,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     flex-shrink: 0;
-    filter: blur(1px);
+    filter: blur(0px);
     background: rgba(255, 255, 255, 0.25);
 }
 
@@ -78,7 +78,7 @@ body {
     max-height: 100%;
     object-fit: contain;
     border-radius: 15px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .arrow {
