@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const gallery = document.querySelector('.gallery');
     const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
     const totalItems = galleryItems.length;
-    let isScrolling;
 
-    // Duplicate the images to create an infinite scrolling effect
+    // Clone images to create infinite scroll illusion
     function cloneImages() {
         galleryItems.forEach(item => {
             const clone = item.cloneNode(true);
@@ -14,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cloneImages();
 
+    // Smooth scroll
+    let isScrolling;
     gallery.addEventListener('scroll', () => {
         window.clearTimeout(isScrolling);
 
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         gallery.scrollBy({
             left: e.deltaY < 0 ? -100 : 100,
+            behavior: 'smooth'
         });
     });
 
@@ -53,4 +55,28 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(fullscreen);
         });
     });
+
+    // Arrow navigation
+    function createArrow(direction) {
+        const arrow = document.createElement('div');
+        arrow.classList.add('arrow', direction);
+        arrow.innerHTML = `
+            <svg viewBox="0 0 24 24">
+                <path d="${direction === 'left' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'}"></path>
+            </svg>
+        `;
+        arrow.addEventListener('click', () => {
+            gallery.scrollBy({
+                left: direction === 'left' ? -300 : 300,
+                behavior: 'smooth'
+            });
+        });
+        return arrow;
+    }
+
+    const leftArrow = createArrow('left');
+    const rightArrow = createArrow('right');
+
+    document.body.appendChild(leftArrow);
+    document.body.appendChild(rightArrow);
 });
