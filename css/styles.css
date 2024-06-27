@@ -6,6 +6,7 @@ body {
     align-items: center;
     background: url('images/background.jpg') no-repeat center center fixed; /* Adjust the path to your background image */
     background-size: cover;
+    overflow: hidden;
 }
 
 .gallery-container {
@@ -20,6 +21,7 @@ body {
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    padding: 10px;
 }
 
 .gallery {
@@ -29,6 +31,8 @@ body {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
 }
 
 .gallery::-webkit-scrollbar {
@@ -43,6 +47,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     backdrop-filter: blur(5px);
+    flex-shrink: 0;
 }
 
 .gallery-item:hover {
@@ -54,12 +59,16 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    max-width: 90vw;
-    max-height: 90vh;
+    width: 80vw;
+    height: 80vh;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: bounceIn 0.5s ease;
 }
 
