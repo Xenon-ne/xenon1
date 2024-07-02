@@ -83,6 +83,7 @@ body {
 }
 .fullscreen.fullscreen-open {
     transform: /*translate(-50%, -50%)*/ scale(1);
+    border-radius: 15px;
 }
 
 .fullscreen.fullscreen-close {
