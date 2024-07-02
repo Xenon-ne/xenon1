@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('Images/29.jpg') no-repeat center center fixed;
+    background: url('Images/73.jpg') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -16,9 +16,9 @@ body {
     width: 85%;
     height: 80%;
     margin: auto;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
     border-radius: 15px;
     overflow: hidden;
     position: relative;
@@ -45,6 +45,7 @@ body {
     width: 100px;
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     /*filter: blur(0px);
